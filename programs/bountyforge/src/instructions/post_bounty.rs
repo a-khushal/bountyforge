@@ -45,7 +45,7 @@ impl<'info> PostBounty<'info> {
         bounty_id: u64,
         description: String,
         reward: u64,
-        bump: u8,
+        bumps: &PostBountyBumps,
     ) -> Result<()> {
         // 1. init bounty account
         self.bounty.set_inner(Bounty {
@@ -55,7 +55,7 @@ impl<'info> PostBounty<'info> {
             solution_hash: None,
             status: BountyStatus::Open,
             creator: self.creator.key(),
-            bump,
+            bump: bumps.bounty,
         });
 
         // 2. transfering USDC from creator to bounty PDA token account (escrow)

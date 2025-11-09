@@ -30,8 +30,8 @@ app.post('/api/switchboard', async (req: Request, res: Response) => {
 
     console.log(`[x402] Payment received: ${amount} USDC for Switchboard oracle`);
 
-    // TODO: Validate payment via AgentPay SDK
-    // For now, simulate payment acceptance
+    // TODO: Validate payment via AgentPay SDK (as per PLAN.md)
+    // For MVP, accept payment header and grant access
 
     // Mock Switchboard oracle response
     const mockPriceData = {
@@ -66,8 +66,8 @@ app.post('/api/llm', async (req: Request, res: Response) => {
 
     console.log(`[x402] Payment received: ${amount} USDC for LLM inference`);
 
-    // TODO: Validate payment via AgentPay SDK
-    // TODO: Call LLM API
+    // TODO: Validate payment via AgentPay SDK (as per PLAN.md)
+    // For MVP, accept payment header and grant access
 
     res.json({
         response: 'LLM inference result (mock)',
@@ -97,8 +97,8 @@ app.post('/api/data', async (req: Request, res: Response) => {
 
     console.log(`[x402] Payment received: ${amount} USDC for data API`);
 
-    // TODO: Validate payment via AgentPay SDK
-    // TODO: Fetch external data
+    // TODO: Validate payment via AgentPay SDK (as per PLAN.md)
+    // For MVP, accept payment header and grant access
 
     res.json({
         data: 'External data result (mock)'

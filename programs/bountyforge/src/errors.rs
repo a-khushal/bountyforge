@@ -20,4 +20,8 @@ pub enum BountyForgeError {
     ReputationOwnerMismatch,
     #[msg("Reputation arithmetic overflow")]
     ReputationOverflow,
+    #[msg("Switchboard oracle verification failed")]
+    OracleVerificationFailed,
+    #[msg("Oracle data is stale")]
+    OracleDataStale,
 }

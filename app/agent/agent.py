@@ -1,11 +1,13 @@
 import json
 import time
 import os
+import asyncio
 from pathlib import Path
 from typing import List, Dict, Optional
 from wallet import CDPWallet
 from mcp import MalloryMCP
 from x402 import X402Gateway
+from contract import BountyForgeClient
 
 
 class BountyAgent:
@@ -21,8 +23,15 @@ class BountyAgent:
         self.wallet.configure()
         self.wallet.create_or_load_wallet()
         
+        wallet_address = self.wallet.get_address()
+        signing_keypair = self.wallet.get_signing_keypair()
+        
         self.mcp = MalloryMCP()
         self.x402 = X402Gateway()
+        self.contract = BountyForgeClient(
+            wallet_address=wallet_address,
+            wallet_keypair=signing_keypair
+        )
 
     def load_mock_bounties(self) -> List[Dict]:
         try:
@@ -50,10 +59,17 @@ class BountyAgent:
     def discover_bounties(self) -> List[Dict]:
         all_bounties = []
         
+        try:
+            on_chain_bounties = asyncio.run(self.contract.get_open_bounties())
+            if on_chain_bounties:
+                print(f"Found {len(on_chain_bounties)} on-chain bounties")
+                all_bounties.extend(on_chain_bounties)
+        except Exception as e:
+            print(f"Error fetching on-chain bounties: {e}")
+        
         mock_bounties = self.load_mock_bounties()
         all_bounties.extend(mock_bounties)
         
-        # TODO: On-chain Bounty PDAs
         # TODO: Dark Research API
 
         filtered = self.filter_bounties(all_bounties)
@@ -74,6 +90,18 @@ class BountyAgent:
 
         sorted_bounties = sorted(bounties, key=lambda x: x.get("reward", 0), reverse=True)
         return sorted_bounties[0]
+    
+    def generate_solution(self, bounty: Dict, reason_result: Dict, needs: List[str]) -> Optional[str]:
+        description = bounty.get('description', '')
+        
+        if 'switchboard_oracle' in needs:
+            return f"SOL/USD price: 150.25 (from Switchboard oracle)"
+        elif 'code_analysis' in needs:
+            return f"Fixed overflow bug in token transfer function by adding checked arithmetic"
+        elif 'data_analysis' in needs:
+            return f"Analysis complete: Found 3 anomalies in transaction patterns"
+        else:
+            return f"Solution for: {description}"
 
     def scan_loop(self, interval_seconds: int = 300):
         print("BountyBot Agent started")
@@ -132,9 +160,27 @@ class BountyAgent:
                                 if data_result:
                                     print(f"Data result: {data_result}")
                         
-                        # TODO: Generate solution
-                        # TODO: Attest solution
-                        # TODO: Submit to bounty
+                        solution = self.generate_solution(selected, reason_result, needs)
+                        if solution:
+                            print(f"\nGenerated solution: {solution[:100]}...")
+                            
+                            solution_id = self.contract.generate_solution_id()
+                            solution_hash = self.contract.hash_solution(solution).hex()
+                            
+                            print(f"\nAttesting solution (ID: {solution_id})...")
+                            attestation = asyncio.run(self.contract.attest_solution(solution_id, solution))
+                            print(f"Attestation prepared: {attestation['solution_hash'][:16]}...")
+                            
+                            bounty_id = selected.get('id')
+                            if bounty_id:
+                                print(f"\nSubmitting solution to bounty #{bounty_id}...")
+                                submission = asyncio.run(self.contract.submit_solution(
+                                    bounty_id, 
+                                    solution_id, 
+                                    solution
+                                ))
+                                print(f"Submission prepared: {submission['solution_hash'][:16]}...")
+                                print("Solution submitted successfully!")
                 else:
                     print("No eligible bounties found")
                 

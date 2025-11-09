@@ -32,6 +32,11 @@ pub struct SubmitSolution<'info> {
     )]
     pub reputation: Account<'info, Reputation>,
 
+    /// CHECK: Optional Switchboard oracle account for price verification
+    /// Only required if bounty description mentions oracle/price
+    /// This is a generic account info - verification happens off-chain
+    pub oracle: Option<AccountInfo<'info>>,
+
     pub system_program: Program<'info, System>,
 }
 
@@ -47,12 +52,36 @@ impl<'info> SubmitSolution<'info> {
             BountyForgeError::SolutionHashMismatch
         );
 
-        // 2. updating bounty
+        let description_lower = self.bounty.description.to_lowercase();
+        let requires_oracle = description_lower.contains("oracle") 
+            || description_lower.contains("switchboard") 
+            || description_lower.contains("price");
+        
+        if requires_oracle {
+            // Oracle verification: require oracle account to be provided
+            // Full verification happens off-chain via x402 gateway
+            // On-chain we just verify the account exists and is not empty
+            require!(
+                self.oracle.is_some(),
+                BountyForgeError::OracleVerificationFailed
+            );
+            
+            if let Some(ref oracle_account) = self.oracle {
+                // Basic check: oracle account must exist and have data
+                require!(
+                    !oracle_account.data_is_empty(),
+                    BountyForgeError::OracleVerificationFailed
+                );
+            }
+        }
+
+        // 3. updating bounty
         self.bounty.solution_hash = Some(solution_hash);
         self.bounty.status = BountyStatus::Submitted;
 
-        // 3. updating reputation
+        // 4. updating reputation
         if self.reputation.agent == Pubkey::default() {
+            // New reputation account - initialize it
             self.reputation.set_inner(Reputation {
                 agent: self.agent.key(),
                 score: 1,
@@ -62,6 +91,10 @@ impl<'info> SubmitSolution<'info> {
                 bump: bumps.reputation,
             });
         } else {
+            require!(
+                self.reputation.agent == self.agent.key(),
+                BountyForgeError::ReputationOwnerMismatch
+            );
             self.reputation.score = self
                 .reputation
                 .score

@@ -2,6 +2,7 @@ use crate::constants::ANCHOR_DISCRIMINATOR;
 use crate::state::{Bounty, BountyStatus};
 use anchor_lang::prelude::*;
 use anchor_spl::token::{transfer, Token, TokenAccount, Transfer};
+use anchor_spl::associated_token::{AssociatedToken, get_associated_token_address};
 
 #[derive(Accounts)]
 #[instruction(bounty_id: u64)]
@@ -36,6 +37,7 @@ pub struct PostBounty<'info> {
     pub bounty_token_account: Account<'info, TokenAccount>,
 
     pub token_program: Program<'info, Token>,
+    pub associated_token_program: Program<'info, AssociatedToken>,
     pub system_program: Program<'info, System>,
 }
 
@@ -58,7 +60,13 @@ impl<'info> PostBounty<'info> {
             bump: bumps.bounty,
         });
 
-        // 2. transfering USDC from creator to bounty PDA token account (escrow)
+        // 2. Create associated token account for bounty PDA if it doesn't exist
+        let expected_ata = get_associated_token_address(&self.bounty.key(), &self.usdc_mint.key());
+        if self.bounty_token_account.key() != expected_ata {
+            return Err(anchor_lang::error!(anchor_lang::error::ErrorCode::ConstraintTokenMint));
+        }
+
+        // 3. transfering USDC from creator to bounty PDA token account (escrow)
         let cpi_program = self.token_program.to_account_info();
         let cpi_accounts = Transfer {
             from: self.creator_token_account.to_account_info(),

@@ -8,12 +8,18 @@ skip-lint = false
 [programs.localnet]
 bountyforge = "DUYYaLDvkWfFYKB8HshseMi6f5X9ShxaydsfrJLrkGMM"
 
+[programs.devnet]
+bountyforge = "DUYYaLDvkWfFYKB8HshseMi6f5X9ShxaydsfrJLrkGMM"
+
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+cluster = "devnet"
 wallet = "~/.config/solana/id.json"
+
+[test]
+startup_wait = 10000
 
 [scripts]
 test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

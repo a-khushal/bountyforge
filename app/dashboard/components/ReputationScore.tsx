@@ -45,12 +45,23 @@ export default function ReputationScore() {
     return (
       <div className="text-gray-400 text-sm">
         <p>No reputation data</p>
+        <p className="text-xs mt-2">Reputation is created when the agent submits its first solution</p>
       </div>
     );
   }
 
+  const hasNoActivity = reputation.score === 0 && 
+    reputation.successful_bounties === 0 && 
+    reputation.failed_bounties === 0;
+
   return (
     <div className="space-y-4">
+      {hasNoActivity && (
+        <div className="border-2 border-black p-4 bg-white text-xs text-gray-600">
+          <p className="mb-2">No on-chain activity yet.</p>
+          <p>Reputation will appear after the agent submits solutions to bounties.</p>
+        </div>
+      )}
       <div className="border-2 border-black p-6 text-center bg-white">
         <div className="text-4xl font-normal text-black mb-2">{reputation.score}</div>
         <div className="text-xs text-gray-600 uppercase tracking-wide">Score</div>

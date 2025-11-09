@@ -1,0 +1,222 @@
+{"timestamp": "2025-11-09T08:26:35.684360", "level": "info", "message": "Agent service started"}
+{"timestamp": "2025-11-09T08:26:36.324207", "level": "info", "message": "Wallet address: 8rHbRCsQzCt6x7ZpUALtpqM6SPJtCmBdkqb59J3VkBA7"}
+{"timestamp": "2025-11-09T08:26:36.324426", "level": "info", "message": "Running single scan cycle"}
+{"timestamp": "2025-11-09T08:26:36.324502", "level": "info", "message": "Scanning for bounties..."}
+{"timestamp": "2025-11-09T08:26:36.324672", "level": "success", "message": "Discovered 3 eligible bounties"}
+{"timestamp": "2025-11-09T08:26:36.324728", "level": "info", "message": "Bounty #1: Solve Solana puzzle: Calculate the average SOL/USD price ove..."}
+{"timestamp": "2025-11-09T08:26:36.324770", "level": "info", "message": "Bounty #2: Debug smart contract: Find and fix the overflow bug in the t..."}
+{"timestamp": "2025-11-09T08:26:36.324810", "level": "info", "message": "Bounty #3: Data analysis: Analyze transaction patterns from the last 7 ..."}
+{"timestamp": "2025-11-09T08:26:36.324859", "level": "info", "message": "Selected Bounty #2"}
+{"timestamp": "2025-11-09T08:26:36.902381", "level": "info", "message": "Agent service stopped"}
+{"timestamp": "2025-11-09T09:09:11.646686", "level": "info", "message": "Agent service started"}
+{"timestamp": "2025-11-09T09:09:12.431955", "level": "info", "message": "Wallet address: CvAd6kTTG92D4Y1V8p6tdZj8GdKqEhAJx9UqcazuLFwB"}
+{"timestamp": "2025-11-09T09:09:12.432123", "level": "info", "message": "Running single scan cycle"}
+{"timestamp": "2025-11-09T09:09:12.432177", "level": "info", "message": "Scanning for bounties..."}
+{"timestamp": "2025-11-09T09:09:13.284935", "level": "success", "message": "Discovered 3 eligible bounties"}
+{"timestamp": "2025-11-09T09:09:13.285034", "level": "info", "message": "Bounty #1: Solve Solana puzzle: Calculate the average SOL/USD price ove..."}
+{"timestamp": "2025-11-09T09:09:13.285067", "level": "info", "message": "Bounty #2: Debug smart contract: Find and fix the overflow bug in the t..."}
+{"timestamp": "2025-11-09T09:09:13.285091", "level": "info", "message": "Bounty #3: Data analysis: Analyze transaction patterns from the last 7 ..."}
+{"timestamp": "2025-11-09T09:09:13.285120", "level": "info", "message": "Selected Bounty #2"}
+{"timestamp": "2025-11-09T09:09:13.633919", "level": "info", "message": "Agent service stopped"}
+{"timestamp": "2025-11-09T09:12:41.951092", "level": "info", "message": "Agent service started"}
+{"timestamp": "2025-11-09T09:12:42.560728", "level": "info", "message": "Wallet address: GrQs9hx7Z8i4PMtLRjdWv46tnyXmYWuhfACvBHs6R4JU"}
+{"timestamp": "2025-11-09T09:12:42.560992", "level": "info", "message": "Running single scan cycle"}
+{"timestamp": "2025-11-09T09:12:42.561134", "level": "info", "message": "Scanning for bounties..."}
+{"timestamp": "2025-11-09T09:12:43.766994", "level": "success", "message": "Discovered 3 eligible bounties"}
+{"timestamp": "2025-11-09T09:12:43.767144", "level": "info", "message": "Bounty #1: Solve Solana puzzle: Calculate the average SOL/USD price ove..."}
+{"timestamp": "2025-11-09T09:12:43.767198", "level": "info", "message": "Bounty #2: Debug smart contract: Find and fix the overflow bug in the t..."}
+{"timestamp": "2025-11-09T09:12:43.767252", "level": "info", "message": "Bounty #3: Data analysis: Analyze transaction patterns from the last 7 ..."}
+{"timestamp": "2025-11-09T09:12:43.767302", "level": "info", "message": "Selected Bounty #2"}
+{"timestamp": "2025-11-09T09:12:44.104895", "level": "info", "message": "Reasoning: Bounty requires code analysis and debugging"}
+{"timestamp": "2025-11-09T09:12:44.105039", "level": "info", "message": "Paying for LLM code analysis..."}
+{"timestamp": "2025-11-09T09:12:44.112847", "level": "success", "message": "LLM analysis: {'response': 'LLM inference result (mock)', 'tokens_used': 100}"}
+{"timestamp": "2025-11-09T09:12:44.112950", "level": "info", "message": "Generated solution: Fixed overflow bug in token transfer function by adding checked arithmetic..."}
+{"timestamp": "2025-11-09T09:12:44.113009", "level": "info", "message": "Attesting solution (ID: 7344990313667832592)..."}
+{"timestamp": "2025-11-09T09:12:44.113132", "level": "success", "message": "Attestation prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:12:44.113154", "level": "info", "message": "Submitting solution to bounty #2..."}
+{"timestamp": "2025-11-09T09:12:44.113203", "level": "success", "message": "Submission prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:12:44.113220", "level": "success", "message": "Solution submitted successfully!"}
+{"timestamp": "2025-11-09T09:12:44.113248", "level": "info", "message": "Agent service stopped"}
+{"timestamp": "2025-11-09T09:15:03.368165", "level": "info", "message": "Agent service started"}
+{"timestamp": "2025-11-09T09:15:04.074999", "level": "info", "message": "Wallet address: 25ofVvcFqsYpRBmD2vWKUVrqHQq1adnMV7wCfZTy3JVy"}
+{"timestamp": "2025-11-09T09:15:04.075293", "level": "info", "message": "Running single scan cycle"}
+{"timestamp": "2025-11-09T09:15:04.075386", "level": "info", "message": "Scanning for bounties..."}
+{"timestamp": "2025-11-09T09:15:05.094169", "level": "success", "message": "Discovered 3 eligible bounties"}
+{"timestamp": "2025-11-09T09:15:05.094477", "level": "info", "message": "Bounty #1: Solve Solana puzzle: Calculate the average SOL/USD price ove..."}
+{"timestamp": "2025-11-09T09:15:05.094561", "level": "info", "message": "Bounty #2: Debug smart contract: Find and fix the overflow bug in the t..."}
+{"timestamp": "2025-11-09T09:15:05.094616", "level": "info", "message": "Bounty #3: Data analysis: Analyze transaction patterns from the last 7 ..."}
+{"timestamp": "2025-11-09T09:15:05.094679", "level": "info", "message": "Selected Bounty #2"}
+{"timestamp": "2025-11-09T09:15:05.315587", "level": "info", "message": "Reasoning: Bounty requires code analysis and debugging"}
+{"timestamp": "2025-11-09T09:15:05.315772", "level": "info", "message": "Paying for LLM code analysis..."}
+{"timestamp": "2025-11-09T09:15:05.336850", "level": "success", "message": "LLM analysis: {'response': 'LLM inference result (mock)', 'tokens_used': 100}"}
+{"timestamp": "2025-11-09T09:15:05.336997", "level": "info", "message": "Generated solution: Fixed overflow bug in token transfer function by adding checked arithmetic..."}
+{"timestamp": "2025-11-09T09:15:05.337120", "level": "info", "message": "Attesting solution (ID: 1161838335236944836)..."}
+{"timestamp": "2025-11-09T09:15:05.337327", "level": "success", "message": "Attestation prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:15:05.337397", "level": "info", "message": "Submitting solution to bounty #2..."}
+{"timestamp": "2025-11-09T09:15:05.337501", "level": "success", "message": "Submission prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:15:05.337550", "level": "success", "message": "Solution submitted successfully!"}
+{"timestamp": "2025-11-09T09:15:05.337593", "level": "info", "message": "Agent service stopped"}
+{"timestamp": "2025-11-09T09:31:08.663626", "level": "info", "message": "Agent service started"}
+{"timestamp": "2025-11-09T09:31:09.321002", "level": "info", "message": "CDP Wallet address: A8SSc43bGivpEg8wDyUAcwA7P76mub5Un9NcunSz8gnm"}
+{"timestamp": "2025-11-09T09:31:09.321185", "level": "info", "message": "Running single scan cycle"}
+{"timestamp": "2025-11-09T09:31:09.321361", "level": "info", "message": "Scanning for bounties..."}
+{"timestamp": "2025-11-09T09:31:10.418064", "level": "success", "message": "Discovered 3 eligible bounties"}
+{"timestamp": "2025-11-09T09:31:10.418274", "level": "info", "message": "Bounty #1: Solve Solana puzzle: Calculate the average SOL/USD price ove..."}
+{"timestamp": "2025-11-09T09:31:10.418402", "level": "info", "message": "Bounty #2: Debug smart contract: Find and fix the overflow bug in the t..."}
+{"timestamp": "2025-11-09T09:31:10.418504", "level": "info", "message": "Bounty #3: Data analysis: Analyze transaction patterns from the last 7 ..."}
+{"timestamp": "2025-11-09T09:31:10.418610", "level": "info", "message": "Selected Bounty #2"}
+{"timestamp": "2025-11-09T09:31:11.038399", "level": "info", "message": "Reasoning: Bounty requires code analysis and debugging"}
+{"timestamp": "2025-11-09T09:31:11.038579", "level": "info", "message": "Paying for LLM code analysis..."}
+{"timestamp": "2025-11-09T09:31:11.051037", "level": "success", "message": "LLM analysis: {'response': 'LLM inference result (mock)', 'tokens_used': 100}"}
+{"timestamp": "2025-11-09T09:31:11.051157", "level": "info", "message": "Generated solution: Fixed overflow bug in token transfer function by adding checked arithmetic..."}
+{"timestamp": "2025-11-09T09:31:11.051240", "level": "info", "message": "Attesting solution (ID: 4445792156275082913)..."}
+{"timestamp": "2025-11-09T09:31:11.066444", "level": "success", "message": "Attestation prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:31:11.067020", "level": "info", "message": "Submitting solution to bounty #2..."}
+{"timestamp": "2025-11-09T09:31:11.116300", "level": "success", "message": "Submission prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:31:11.116917", "level": "success", "message": "Solution submitted successfully!"}
+{"timestamp": "2025-11-09T09:31:11.116958", "level": "info", "message": "Agent service stopped"}
+{"timestamp": "2025-11-09T09:31:41.754994", "level": "info", "message": "Agent service started"}
+{"timestamp": "2025-11-09T09:31:43.084617", "level": "info", "message": "CDP Wallet address: 8Bkqa2zeBKBjD6xqRVE5hyYufgtQeieLQeThbATBeCUR"}
+{"timestamp": "2025-11-09T09:31:43.084821", "level": "info", "message": "Running single scan cycle"}
+{"timestamp": "2025-11-09T09:31:43.084945", "level": "info", "message": "Scanning for bounties..."}
+{"timestamp": "2025-11-09T09:31:43.903266", "level": "success", "message": "Discovered 3 eligible bounties"}
+{"timestamp": "2025-11-09T09:31:43.903522", "level": "info", "message": "Bounty #1: Solve Solana puzzle: Calculate the average SOL/USD price ove..."}
+{"timestamp": "2025-11-09T09:31:43.903642", "level": "info", "message": "Bounty #2: Debug smart contract: Find and fix the overflow bug in the t..."}
+{"timestamp": "2025-11-09T09:31:43.903748", "level": "info", "message": "Bounty #3: Data analysis: Analyze transaction patterns from the last 7 ..."}
+{"timestamp": "2025-11-09T09:31:43.903862", "level": "info", "message": "Selected Bounty #2"}
+{"timestamp": "2025-11-09T09:31:44.069911", "level": "info", "message": "Reasoning: Bounty requires code analysis and debugging"}
+{"timestamp": "2025-11-09T09:31:44.070260", "level": "info", "message": "Paying for LLM code analysis..."}
+{"timestamp": "2025-11-09T09:31:44.077588", "level": "success", "message": "LLM analysis: {'response': 'LLM inference result (mock)', 'tokens_used': 100}"}
+{"timestamp": "2025-11-09T09:31:44.077824", "level": "info", "message": "Generated solution: Fixed overflow bug in token transfer function by adding checked arithmetic..."}
+{"timestamp": "2025-11-09T09:31:44.078001", "level": "info", "message": "Attesting solution (ID: 6756129381641071873)..."}
+{"timestamp": "2025-11-09T09:31:44.078385", "level": "success", "message": "Attestation prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:31:44.078519", "level": "info", "message": "Submitting solution to bounty #2..."}
+{"timestamp": "2025-11-09T09:31:44.078782", "level": "success", "message": "Submission prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:31:44.078898", "level": "success", "message": "Solution submitted successfully!"}
+{"timestamp": "2025-11-09T09:31:44.078999", "level": "info", "message": "Agent service stopped"}
+{"timestamp": "2025-11-09T09:34:25.811884", "level": "info", "message": "Agent service started"}
+{"timestamp": "2025-11-09T09:34:26.422381", "level": "info", "message": "CDP Wallet address: Ayy26o84UkcuXTp6U7z4K1r5KBRHqLTTYqw6wWDDswiX"}
+{"timestamp": "2025-11-09T09:34:26.422468", "level": "info", "message": "Signing keypair address: VXtp9wBRSH649Y2tPqfUqqe9Ex4oeNe8wQE73DGhdg9"}
+{"timestamp": "2025-11-09T09:34:26.422505", "level": "info", "message": "\u26a0\ufe0f  Fund signing address with SOL for transaction fees!"}
+{"timestamp": "2025-11-09T09:34:26.422537", "level": "info", "message": "Running single scan cycle"}
+{"timestamp": "2025-11-09T09:34:26.422575", "level": "info", "message": "Scanning for bounties..."}
+{"timestamp": "2025-11-09T09:34:27.544438", "level": "success", "message": "Discovered 3 eligible bounties"}
+{"timestamp": "2025-11-09T09:34:27.544609", "level": "info", "message": "Bounty #1: Solve Solana puzzle: Calculate the average SOL/USD price ove..."}
+{"timestamp": "2025-11-09T09:34:27.544673", "level": "info", "message": "Bounty #2: Debug smart contract: Find and fix the overflow bug in the t..."}
+{"timestamp": "2025-11-09T09:34:27.544730", "level": "info", "message": "Bounty #3: Data analysis: Analyze transaction patterns from the last 7 ..."}
+{"timestamp": "2025-11-09T09:34:27.544791", "level": "info", "message": "Selected Bounty #2"}
+{"timestamp": "2025-11-09T09:34:27.749511", "level": "info", "message": "Reasoning: Bounty requires code analysis and debugging"}
+{"timestamp": "2025-11-09T09:34:27.749837", "level": "info", "message": "Paying for LLM code analysis..."}
+{"timestamp": "2025-11-09T09:34:27.757094", "level": "success", "message": "LLM analysis: {'response': 'LLM inference result (mock)', 'tokens_used': 100}"}
+{"timestamp": "2025-11-09T09:34:27.757344", "level": "info", "message": "Generated solution: Fixed overflow bug in token transfer function by adding checked arithmetic..."}
+{"timestamp": "2025-11-09T09:34:27.757483", "level": "info", "message": "Attesting solution (ID: 3173926178096612140)..."}
+{"timestamp": "2025-11-09T09:34:28.359127", "level": "success", "message": "Attestation prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:34:28.359347", "level": "info", "message": "Submitting solution to bounty #2..."}
+{"timestamp": "2025-11-09T09:34:29.384240", "level": "success", "message": "Submission prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:34:29.384295", "level": "success", "message": "Solution submitted successfully!"}
+{"timestamp": "2025-11-09T09:34:29.384314", "level": "info", "message": "Agent service stopped"}
+{"timestamp": "2025-11-09T09:34:30.400098", "level": "info", "message": "Agent service started"}
+{"timestamp": "2025-11-09T09:34:30.963652", "level": "info", "message": "CDP Wallet address: Dk7CpbmLKpeErYfCBiTyv7N5UT2dVeGg22W5KaCUsy6s"}
+{"timestamp": "2025-11-09T09:34:30.963753", "level": "info", "message": "Signing keypair address: 7fE2dE5L4kbB3aoSHXSFdZBZGnZFPRHwfdtxXY7tbFYQ"}
+{"timestamp": "2025-11-09T09:34:30.963798", "level": "info", "message": "\u26a0\ufe0f  Fund signing address with SOL for transaction fees!"}
+{"timestamp": "2025-11-09T09:34:30.963839", "level": "info", "message": "Running single scan cycle"}
+{"timestamp": "2025-11-09T09:34:30.963875", "level": "info", "message": "Scanning for bounties..."}
+{"timestamp": "2025-11-09T09:34:31.533432", "level": "success", "message": "Discovered 3 eligible bounties"}
+{"timestamp": "2025-11-09T09:34:31.533710", "level": "info", "message": "Bounty #1: Solve Solana puzzle: Calculate the average SOL/USD price ove..."}
+{"timestamp": "2025-11-09T09:34:31.533882", "level": "info", "message": "Bounty #2: Debug smart contract: Find and fix the overflow bug in the t..."}
+{"timestamp": "2025-11-09T09:34:31.533936", "level": "info", "message": "Bounty #3: Data analysis: Analyze transaction patterns from the last 7 ..."}
+{"timestamp": "2025-11-09T09:34:31.533997", "level": "info", "message": "Selected Bounty #2"}
+{"timestamp": "2025-11-09T09:34:31.687193", "level": "info", "message": "Reasoning: Bounty requires code analysis and debugging"}
+{"timestamp": "2025-11-09T09:34:31.687519", "level": "info", "message": "Paying for LLM code analysis..."}
+{"timestamp": "2025-11-09T09:34:31.693387", "level": "success", "message": "LLM analysis: {'response': 'LLM inference result (mock)', 'tokens_used': 100}"}
+{"timestamp": "2025-11-09T09:34:31.693556", "level": "info", "message": "Generated solution: Fixed overflow bug in token transfer function by adding checked arithmetic..."}
+{"timestamp": "2025-11-09T09:34:31.693656", "level": "info", "message": "Attesting solution (ID: 2675341970921605293)..."}
+{"timestamp": "2025-11-09T09:34:32.677749", "level": "success", "message": "Attestation prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:34:32.678013", "level": "info", "message": "Submitting solution to bounty #2..."}
+{"timestamp": "2025-11-09T09:34:33.271106", "level": "success", "message": "Submission prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:34:33.271193", "level": "success", "message": "Solution submitted successfully!"}
+{"timestamp": "2025-11-09T09:34:33.271219", "level": "info", "message": "Agent service stopped"}
+{"timestamp": "2025-11-09T09:36:49.030501", "level": "info", "message": "Agent service started"}
+{"timestamp": "2025-11-09T09:36:49.623408", "level": "info", "message": "CDP Wallet address: Gsrpz5UZZbwUg6zYZLXSWRX6Pr58WhBLDPat2HB8aLDo"}
+{"timestamp": "2025-11-09T09:36:49.623443", "level": "info", "message": "Signing keypair address: 9X7nK98NDMStCLwhnFCDzzzfsnSPCo4Wu6kCck8r22yS"}
+{"timestamp": "2025-11-09T09:36:49.623459", "level": "info", "message": "\u26a0\ufe0f  Fund signing address with SOL for transaction fees!"}
+{"timestamp": "2025-11-09T09:36:49.623473", "level": "info", "message": "Running single scan cycle"}
+{"timestamp": "2025-11-09T09:36:49.623488", "level": "info", "message": "Scanning for bounties..."}
+{"timestamp": "2025-11-09T09:36:50.599009", "level": "success", "message": "Discovered 3 eligible bounties"}
+{"timestamp": "2025-11-09T09:36:50.599132", "level": "info", "message": "Bounty #1: Solve Solana puzzle: Calculate the average SOL/USD price ove..."}
+{"timestamp": "2025-11-09T09:36:50.599185", "level": "info", "message": "Bounty #2: Debug smart contract: Find and fix the overflow bug in the t..."}
+{"timestamp": "2025-11-09T09:36:50.599227", "level": "info", "message": "Bounty #3: Data analysis: Analyze transaction patterns from the last 7 ..."}
+{"timestamp": "2025-11-09T09:36:50.599298", "level": "info", "message": "Selected Bounty #2"}
+{"timestamp": "2025-11-09T09:36:51.522480", "level": "info", "message": "Reasoning: Bounty requires code analysis and debugging"}
+{"timestamp": "2025-11-09T09:36:51.522629", "level": "info", "message": "Paying for LLM code analysis..."}
+{"timestamp": "2025-11-09T09:36:51.529323", "level": "success", "message": "LLM analysis: {'response': 'LLM inference result (mock)', 'tokens_used': 100}"}
+{"timestamp": "2025-11-09T09:36:51.529458", "level": "info", "message": "Generated solution: Fixed overflow bug in token transfer function by adding checked arithmetic..."}
+{"timestamp": "2025-11-09T09:36:51.529655", "level": "info", "message": "Attesting solution (ID: 5339248405565622505)..."}
+{"timestamp": "2025-11-09T09:36:52.539671", "level": "success", "message": "Attestation prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:36:52.539898", "level": "info", "message": "Submitting solution to bounty #2..."}
+{"timestamp": "2025-11-09T09:36:53.419719", "level": "success", "message": "Submission prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:36:53.419816", "level": "success", "message": "Solution submitted successfully!"}
+{"timestamp": "2025-11-09T09:36:53.419838", "level": "info", "message": "Agent service stopped"}
+{"timestamp": "2025-11-09T09:38:28.402498", "level": "info", "message": "Agent service started"}
+{"timestamp": "2025-11-09T09:38:29.713112", "level": "info", "message": "CDP Wallet address: BT131TppvV7BCFpUxPToLwWwNpyULLokQue2bNJ6UuR5"}
+{"timestamp": "2025-11-09T09:38:29.713340", "level": "info", "message": "Signing keypair address: BPzxJrWmc26zeuvyvx445UwzTNoZi6HuaR8Am7ST19qQ"}
+{"timestamp": "2025-11-09T09:38:29.713478", "level": "info", "message": "\u26a0\ufe0f  Fund signing address with SOL for transaction fees!"}
+{"timestamp": "2025-11-09T09:38:29.713601", "level": "info", "message": "Running single scan cycle"}
+{"timestamp": "2025-11-09T09:38:29.713714", "level": "info", "message": "Scanning for bounties..."}
+{"timestamp": "2025-11-09T09:38:30.742261", "level": "success", "message": "Discovered 3 eligible bounties"}
+{"timestamp": "2025-11-09T09:38:30.742540", "level": "info", "message": "Bounty #1: Solve Solana puzzle: Calculate the average SOL/USD price ove..."}
+{"timestamp": "2025-11-09T09:38:30.742724", "level": "info", "message": "Bounty #2: Debug smart contract: Find and fix the overflow bug in the t..."}
+{"timestamp": "2025-11-09T09:38:30.742858", "level": "info", "message": "Bounty #3: Data analysis: Analyze transaction patterns from the last 7 ..."}
+{"timestamp": "2025-11-09T09:38:30.743026", "level": "info", "message": "Selected Bounty #2"}
+{"timestamp": "2025-11-09T09:38:30.954858", "level": "info", "message": "Reasoning: Bounty requires code analysis and debugging"}
+{"timestamp": "2025-11-09T09:38:30.954973", "level": "info", "message": "Paying for LLM code analysis..."}
+{"timestamp": "2025-11-09T09:38:30.957812", "level": "success", "message": "LLM analysis: {'response': 'LLM inference result (mock)', 'tokens_used': 100}"}
+{"timestamp": "2025-11-09T09:38:30.957877", "level": "info", "message": "Generated solution: Fixed overflow bug in token transfer function by adding checked arithmetic..."}
+{"timestamp": "2025-11-09T09:38:30.957923", "level": "info", "message": "Attesting solution (ID: 7399976029051680302)..."}
+{"timestamp": "2025-11-09T09:38:32.072471", "level": "success", "message": "Attestation prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:38:32.072676", "level": "info", "message": "Submitting solution to bounty #2..."}
+{"timestamp": "2025-11-09T09:38:32.983018", "level": "success", "message": "Submission prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:38:32.983168", "level": "success", "message": "Solution submitted successfully!"}
+{"timestamp": "2025-11-09T09:38:32.983243", "level": "info", "message": "Agent service stopped"}
+{"timestamp": "2025-11-09T09:50:34.173393", "level": "info", "message": "Agent service started"}
+{"timestamp": "2025-11-09T09:50:34.839393", "level": "info", "message": "CDP Wallet address: BCQMU2RmMd9gyFLwghAp1MwXnxnZBYrCshWHTfysExCJ"}
+{"timestamp": "2025-11-09T09:50:34.839508", "level": "info", "message": "Signing keypair address: 9eRc7W9VLu28mktXTFdeu3ZRHxKSeFfWXM7AKfVKmq71"}
+{"timestamp": "2025-11-09T09:50:34.839557", "level": "info", "message": "\u26a0\ufe0f  Fund signing address with SOL for transaction fees!"}
+{"timestamp": "2025-11-09T09:50:34.839600", "level": "info", "message": "Running single scan cycle"}
+{"timestamp": "2025-11-09T09:50:34.839645", "level": "info", "message": "Scanning for bounties..."}
+{"timestamp": "2025-11-09T09:50:35.739606", "level": "success", "message": "Discovered 3 eligible bounties"}
+{"timestamp": "2025-11-09T09:50:35.739714", "level": "info", "message": "Bounty #1: Solve Solana puzzle: Calculate the average SOL/USD price ove..."}
+{"timestamp": "2025-11-09T09:50:35.739768", "level": "info", "message": "Bounty #2: Debug smart contract: Find and fix the overflow bug in the t..."}
+{"timestamp": "2025-11-09T09:50:35.739820", "level": "info", "message": "Bounty #3: Data analysis: Analyze transaction patterns from the last 7 ..."}
+{"timestamp": "2025-11-09T09:50:35.739870", "level": "info", "message": "Selected Bounty #2"}
+{"timestamp": "2025-11-09T09:50:36.513907", "level": "info", "message": "Reasoning: Bounty requires code analysis and debugging"}
+{"timestamp": "2025-11-09T09:50:36.514112", "level": "info", "message": "Paying for LLM code analysis..."}
+{"timestamp": "2025-11-09T09:50:36.533867", "level": "success", "message": "LLM analysis: {'response': 'LLM inference result (mock)', 'tokens_used': 100}"}
+{"timestamp": "2025-11-09T09:50:36.534097", "level": "info", "message": "Generated solution: Fixed overflow bug in token transfer function by adding checked arithmetic..."}
+{"timestamp": "2025-11-09T09:50:36.534294", "level": "info", "message": "Attesting solution (ID: 3048796010994677973)..."}
+{"timestamp": "2025-11-09T09:50:37.316589", "level": "success", "message": "Attestation prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:50:37.316934", "level": "info", "message": "Submitting solution to bounty #2..."}
+{"timestamp": "2025-11-09T09:50:38.282844", "level": "success", "message": "Submission prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:50:38.282914", "level": "success", "message": "Solution submitted successfully!"}
+{"timestamp": "2025-11-09T09:50:38.282937", "level": "info", "message": "Agent service stopped"}
+{"timestamp": "2025-11-09T09:50:41.902553", "level": "info", "message": "Agent service started"}
+{"timestamp": "2025-11-09T09:50:42.381248", "level": "info", "message": "CDP Wallet address: GiVqh9EJD1moaVe6TjTxv6vG9vmQd5VwHu39EfxBifrG"}
+{"timestamp": "2025-11-09T09:50:42.381399", "level": "info", "message": "Signing keypair address: FEQYLGDLTzqLs2nXhnEPRGgLKMR1M5kmyufHvtsEhi9G"}
+{"timestamp": "2025-11-09T09:50:42.381461", "level": "info", "message": "\u26a0\ufe0f  Fund signing address with SOL for transaction fees!"}
+{"timestamp": "2025-11-09T09:50:42.381514", "level": "info", "message": "Running single scan cycle"}
+{"timestamp": "2025-11-09T09:50:42.381563", "level": "info", "message": "Scanning for bounties..."}
+{"timestamp": "2025-11-09T09:50:43.482346", "level": "success", "message": "Discovered 3 eligible bounties"}
+{"timestamp": "2025-11-09T09:50:43.482768", "level": "info", "message": "Bounty #1: Solve Solana puzzle: Calculate the average SOL/USD price ove..."}
+{"timestamp": "2025-11-09T09:50:43.485698", "level": "info", "message": "Bounty #2: Debug smart contract: Find and fix the overflow bug in the t..."}
+{"timestamp": "2025-11-09T09:50:43.486295", "level": "info", "message": "Bounty #3: Data analysis: Analyze transaction patterns from the last 7 ..."}
+{"timestamp": "2025-11-09T09:50:43.487261", "level": "info", "message": "Selected Bounty #2"}
+{"timestamp": "2025-11-09T09:50:43.633505", "level": "info", "message": "Reasoning: Bounty requires code analysis and debugging"}
+{"timestamp": "2025-11-09T09:50:43.633793", "level": "info", "message": "Paying for LLM code analysis..."}
+{"timestamp": "2025-11-09T09:50:43.639857", "level": "success", "message": "LLM analysis: {'response': 'LLM inference result (mock)', 'tokens_used': 100}"}
+{"timestamp": "2025-11-09T09:50:43.639997", "level": "info", "message": "Generated solution: Fixed overflow bug in token transfer function by adding checked arithmetic..."}
+{"timestamp": "2025-11-09T09:50:43.640081", "level": "info", "message": "Attesting solution (ID: 8919431734631272327)..."}
+{"timestamp": "2025-11-09T09:50:44.366619", "level": "success", "message": "Attestation prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:50:44.366896", "level": "info", "message": "Submitting solution to bounty #2..."}
+{"timestamp": "2025-11-09T09:50:45.204835", "level": "success", "message": "Submission prepared: d438d909c7bd89f2..."}
+{"timestamp": "2025-11-09T09:50:45.205070", "level": "success", "message": "Solution submitted successfully!"}
+{"timestamp": "2025-11-09T09:50:45.205144", "level": "info", "message": "Agent service stopped"}

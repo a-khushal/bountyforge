@@ -1,41 +1,31 @@
 import { NextResponse } from 'next/server';
-import { readFile } from 'fs/promises';
-import { join } from 'path';
 
-export async function GET() {
+const AGENT_API_URL = process.env.AGENT_API_URL || 'http://localhost:3003';
+
+export async function GET(request: Request) {
   try {
-    // Mock logs - in production, read from agent log file or database
-    const logs = [
-      {
-        timestamp: new Date().toISOString(),
-        level: 'info',
-        message: 'Agent started scanning for bounties',
+    const { searchParams } = new URL(request.url);
+    const limit = searchParams.get('limit') || '100';
+    
+    const response = await fetch(`${AGENT_API_URL}/logs?limit=${limit}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
       },
-      {
-        timestamp: new Date(Date.now() - 5000).toISOString(),
-        level: 'success',
-        message: 'Discovered 3 bounties from mock feed',
-      },
-      {
-        timestamp: new Date(Date.now() - 10000).toISOString(),
-        level: 'info',
-        message: 'Selected Bounty #2 (highest reward)',
-      },
-      {
-        timestamp: new Date(Date.now() - 15000).toISOString(),
-        level: 'info',
-        message: 'Reasoning via Mallory MCP: requires code_analysis',
-      },
-      {
-        timestamp: new Date(Date.now() - 20000).toISOString(),
-        level: 'success',
-        message: 'Paid 0.01 USDC for LLM access via x402 gateway',
-      },
-    ];
+    });
 
-    return NextResponse.json({ logs });
+    if (!response.ok) {
+      throw new Error(`Agent API returned ${response.status}`);
+    }
+
+    const data = await response.json();
+    return NextResponse.json({ logs: data.logs || [] });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch logs' }, { status: 500 });
+    console.error('Error fetching logs:', error);
+    return NextResponse.json({ 
+      error: 'Failed to fetch logs',
+      logs: []
+    }, { status: 500 });
   }
 }
 

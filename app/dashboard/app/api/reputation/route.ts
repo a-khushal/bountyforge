@@ -1,18 +1,75 @@
 import { NextResponse } from 'next/server';
 
+const AGENT_API_URL = process.env.AGENT_API_URL || 'http://localhost:3003';
+const AGENT_WALLET_ADDRESS = process.env.AGENT_WALLET_ADDRESS || '';
+
 export async function GET() {
   try {
-    // Mock reputation - in production, query from Solana contract
-    const reputation = {
-      score: 3,
-      successful_bounties: 2,
-      failed_bounties: 1,
-      total_earned: 3000000, // lamports
-    };
+    // Try to get signing address from agent API if AGENT_WALLET_ADDRESS not set
+    let agentAddress = AGENT_WALLET_ADDRESS;
+    
+    if (!agentAddress) {
+      try {
+        const walletResponse = await fetch(`${AGENT_API_URL}/wallet`, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+        });
+        if (walletResponse.ok) {
+          const walletData = await walletResponse.json();
+          agentAddress = walletData.signing_address;
+        }
+      } catch (e) {
+        // Ignore errors, will use default
+      }
+    }
 
-    return NextResponse.json({ reputation });
+    if (!agentAddress) {
+      return NextResponse.json({ 
+        reputation: {
+          score: 0,
+          successful_bounties: 0,
+          failed_bounties: 0,
+          total_earned: 0,
+          message: "Agent not initialized. Trigger agent first to create signing address."
+        }
+      });
+    }
+
+    const response = await fetch(`${AGENT_API_URL}/reputation?address=${agentAddress}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      return NextResponse.json({ reputation: data.reputation || {
+        score: 0,
+        successful_bounties: 0,
+        failed_bounties: 0,
+        total_earned: 0
+      }});
+    }
+
+    return NextResponse.json({ 
+      reputation: {
+        score: 0,
+        successful_bounties: 0,
+        failed_bounties: 0,
+        total_earned: 0
+      }
+    });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch reputation' }, { status: 500 });
+    console.error('Error fetching reputation:', error);
+    return NextResponse.json({ 
+      reputation: {
+        score: 0,
+        successful_bounties: 0,
+        failed_bounties: 0,
+        total_earned: 0
+      }
+    });
   }
 }
 

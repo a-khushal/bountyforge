@@ -72,6 +72,13 @@ class CDPWallet:
             return self.wallet.address
         return None
     
+    def get_signing_address(self) -> Optional[str]:
+        """Get the address of the signing keypair (for on-chain transactions)"""
+        keypair = self.get_signing_keypair()
+        if keypair:
+            return str(keypair.pubkey())
+        return None
+    
     def get_balance(self) -> Optional[dict]:
         if not self.wallet or not self.client:
             return None
@@ -80,4 +87,45 @@ class CDPWallet:
             return balances
         except Exception as e:
             print(f"Error getting balance: {e}")
+            return None
+    
+    def get_signing_keypair(self) -> Optional['SoldersKeypair']:
+        """
+        Get or create a local keypair for signing transactions.
+        CDP wallet doesn't expose private keys, so we create a separate keypair.
+        This keypair needs to be funded separately for transaction fees.
+        """
+        try:
+            from solders.keypair import Keypair as SoldersKeypair
+            from pathlib import Path
+            import json
+            
+            keypair_path = Path(__file__).parent / ".agent_keypair.json"
+            
+            if keypair_path.exists():
+                with open(keypair_path, 'r') as f:
+                    keypair_data = json.load(f)
+                    secret_key = bytes(keypair_data)
+                    if len(secret_key) != 64:
+                        print(f"Invalid keypair file (got {len(secret_key)} bytes, expected 64). Creating new keypair...")
+                        keypair_path.unlink()
+                        keypair = SoldersKeypair()
+                        with open(keypair_path, 'w') as f:
+                            json.dump(list(keypair.secret()), f)
+                        print(f"Created new signing keypair: {keypair.pubkey()}")
+                        print(f"IMPORTANT: Fund this address with SOL for transaction fees!")
+                        print(f"   Address: {keypair.pubkey()}")
+                        return keypair
+                    return SoldersKeypair.from_bytes(secret_key)
+            else:
+                keypair = SoldersKeypair()
+                with open(keypair_path, 'w') as f:
+                    json.dump(list(keypair.secret()), f)
+                print(f"Created new signing keypair: {keypair.pubkey()}")
+                print(f"IMPORTANT: Fund this address with SOL for transaction fees!")
+                print(f"   Address: {keypair.pubkey()}")
+                print(f"   Keypair saved to: {keypair_path}")
+                return keypair
+        except Exception as e:
+            print(f"Error getting signing keypair: {e}")
             return None

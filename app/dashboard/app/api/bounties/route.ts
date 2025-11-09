@@ -2,16 +2,31 @@ import { NextResponse } from 'next/server';
 import { readFile } from 'fs/promises';
 import { join } from 'path';
 
+const AGENT_API_URL = process.env.AGENT_API_URL || 'http://localhost:3003';
+
 export async function GET() {
   try {
-    // Read from mock bounties file
+    const response = await fetch(`${AGENT_API_URL}/bounties`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      return NextResponse.json({ bounties: data.bounties || [] });
+    }
+  } catch (error) {
+    console.error('Error fetching bounties from agent API:', error);
+  }
+
+  try {
     const bountiesPath = join(process.cwd(), '..', 'agent', 'bounties', 'mock_bounties.json');
     const fileContent = await readFile(bountiesPath, 'utf-8');
     const bounties = JSON.parse(fileContent);
-
     return NextResponse.json({ bounties });
   } catch (error) {
-    // Fallback to mock data if file not found
     const mockBounties = [
       {
         id: 1,
@@ -35,7 +50,6 @@ export async function GET() {
         skills: ['data_analysis', 'pattern_recognition'],
       },
     ];
-
     return NextResponse.json({ bounties: mockBounties });
   }
 }

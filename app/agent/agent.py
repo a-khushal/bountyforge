@@ -23,9 +23,15 @@ class BountyAgent:
         self.wallet.configure()
         self.wallet.create_or_load_wallet()
         
+        wallet_address = self.wallet.get_address()
+        signing_keypair = self.wallet.get_signing_keypair()
+        
         self.mcp = MalloryMCP()
         self.x402 = X402Gateway()
-        self.contract = BountyForgeClient()
+        self.contract = BountyForgeClient(
+            wallet_address=wallet_address,
+            wallet_keypair=signing_keypair
+        )
 
     def load_mock_bounties(self) -> List[Dict]:
         try:
@@ -53,10 +59,17 @@ class BountyAgent:
     def discover_bounties(self) -> List[Dict]:
         all_bounties = []
         
+        try:
+            on_chain_bounties = asyncio.run(self.contract.get_open_bounties())
+            if on_chain_bounties:
+                print(f"Found {len(on_chain_bounties)} on-chain bounties")
+                all_bounties.extend(on_chain_bounties)
+        except Exception as e:
+            print(f"Error fetching on-chain bounties: {e}")
+        
         mock_bounties = self.load_mock_bounties()
         all_bounties.extend(mock_bounties)
         
-        # TODO: On-chain Bounty PDAs
         # TODO: Dark Research API
 
         filtered = self.filter_bounties(all_bounties)
